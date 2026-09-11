@@ -1,6 +1,6 @@
 # 04.选题决策
 
-这是 OPC System 的核心引擎。
+这是 Jacky Content System 的核心引擎。
 
 这个文件夹负责：
 

@@ -5,23 +5,23 @@ set -euo pipefail
 # Public export note:
 # The private version used hard-coded local paths. The open-source version keeps
 # the same helper functions but reads paths from environment variables.
-if [ -z "${OPC_ROOT:-}" ]; then
-  printf 'Missing OPC_ROOT. Example:\n' >&2
-  printf '  OPC_ROOT="$HOME/Documents/OPC System" %s\n' "$0" >&2
+if [ -z "${JACKY_CONTENT_ROOT:-}" ]; then
+  printf 'Missing JACKY_CONTENT_ROOT. Example:\n' >&2
+  printf '  JACKY_CONTENT_ROOT="$HOME/Documents/Jacky Content System" %s\n' "$0" >&2
   exit 1
 fi
 
-VAULT_ROOT="${VAULT_ROOT:-$(cd "$OPC_ROOT/.." 2>/dev/null && pwd -P)}"
+VAULT_ROOT="${VAULT_ROOT:-$(cd "$JACKY_CONTENT_ROOT/.." 2>/dev/null && pwd -P)}"
 
-TOPIC_RECORD="$OPC_ROOT/04.选题决策/选题管理/选题研究/00-选题记录.md"
-TOPIC_RESEARCH="$OPC_ROOT/04.选题决策/选题管理/选题研究/01-选题研究.md"
+TOPIC_RECORD="$JACKY_CONTENT_ROOT/04.选题决策/选题管理/选题研究/00-选题记录.md"
+TOPIC_RESEARCH="$JACKY_CONTENT_ROOT/04.选题决策/选题管理/选题研究/01-选题研究.md"
 
-PENDING_SHORT_VIDEO_DIR="$OPC_ROOT/04.选题决策/选题管理/待发布的选题/短视频"
-PENDING_LONGFORM_DIR="$OPC_ROOT/04.选题决策/选题管理/待发布的选题/公众号+小红书长文"
-PENDING_POST_DIR="$OPC_ROOT/04.选题决策/选题管理/待发布的选题/推文库"
+PENDING_SHORT_VIDEO_DIR="$JACKY_CONTENT_ROOT/04.选题决策/选题管理/待发布的选题/短视频"
+PENDING_LONGFORM_DIR="$JACKY_CONTENT_ROOT/04.选题决策/选题管理/待发布的选题/公众号+小红书长文"
+PENDING_POST_DIR="$JACKY_CONTENT_ROOT/04.选题决策/选题管理/待发布的选题/推文库"
 
-PUBLISHED_SHORT_VIDEO_DIR="$OPC_ROOT/07.发布存档/已发布的选题/短视频"
-PUBLISHED_LONGFORM_DIR="$OPC_ROOT/07.发布存档/已发布的选题/公众号+小红书长文"
+PUBLISHED_SHORT_VIDEO_DIR="$JACKY_CONTENT_ROOT/07.发布存档/已发布的选题/短视频"
+PUBLISHED_LONGFORM_DIR="$JACKY_CONTENT_ROOT/07.发布存档/已发布的选题/公众号+小红书长文"
 
 KNOWLEDGE_DIR="${KNOWLEDGE_DIR:-$VAULT_ROOT/0、知识库}"
 STYLE_DIR="${STYLE_DIR:-}"
@@ -54,9 +54,9 @@ ensure_managed_paths() {
     "$PENDING_POST_DIR" \
     "$PUBLISHED_SHORT_VIDEO_DIR" \
     "$PUBLISHED_LONGFORM_DIR" \
-    "$OPC_ROOT/04.选题决策/100条谜题" \
-    "$OPC_ROOT/04.选题决策/100条非共识" \
-    "$OPC_ROOT/08.数据反馈/月度数据分析报告"
+    "$JACKY_CONTENT_ROOT/04.选题决策/100条谜题" \
+    "$JACKY_CONTENT_ROOT/04.选题决策/100条非共识" \
+    "$JACKY_CONTENT_ROOT/08.数据反馈/月度数据分析报告"
 
   if [ ! -f "$TOPIC_RECORD" ]; then
     mkdir -p "$(dirname "$TOPIC_RECORD")"

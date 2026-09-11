@@ -34,13 +34,13 @@ run_search() {
   fi
 }
 
-# OPC System
-run_search "选题记录" "$OPC_ROOT/04.选题决策/选题管理/选题研究"
-run_search "待发布的选题" "$OPC_ROOT/04.选题决策/选题管理/待发布的选题"
-run_search "已发布的选题" "$OPC_ROOT/07.发布存档/已发布的选题"
-run_search "经验沉淀" "$OPC_ROOT/09.经验沉淀"
-run_search "数据反馈" "$OPC_ROOT/08.数据反馈"
-run_search "对标账号" "$OPC_ROOT/02.对标账号"
+# Jacky Content System
+run_search "选题记录" "$JACKY_CONTENT_ROOT/04.选题决策/选题管理/选题研究"
+run_search "待发布的选题" "$JACKY_CONTENT_ROOT/04.选题决策/选题管理/待发布的选题"
+run_search "已发布的选题" "$JACKY_CONTENT_ROOT/07.发布存档/已发布的选题"
+run_search "经验沉淀" "$JACKY_CONTENT_ROOT/09.经验沉淀"
+run_search "数据反馈" "$JACKY_CONTENT_ROOT/08.数据反馈"
+run_search "对标账号" "$JACKY_CONTENT_ROOT/02.对标账号"
 
 # 知识库
 run_search "知识库" "$KNOWLEDGE_DIR"

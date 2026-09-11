@@ -20,7 +20,7 @@ template="$(template_for_type "$type")"
 
 mkdir -p "$(dirname "$target")"
 
-if [ -f "$target" ]; then
+if [ -e "$target" ] || [ -L "$target" ]; then
   printf '%s\n' "$target"
   exit 0
 fi

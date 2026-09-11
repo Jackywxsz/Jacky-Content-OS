@@ -9,7 +9,7 @@ You are free to:
 
 Under the following term:
 
-- Attribution: give appropriate credit to Jacky-OPC, provide a link to the license, and indicate if changes were made.
+- Attribution: give appropriate credit to Jacky Content, provide a link to the license, and indicate if changes were made.
 
 Full license text: https://creativecommons.org/licenses/by/4.0/legalcode
 

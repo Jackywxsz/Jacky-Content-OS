@@ -1,182 +1,127 @@
-# Jacky-OPC 写作系统 Skill 仓库
+<p align="center">
+  <img src="./assets/readme/hero.svg" width="100%" alt="Jacky Content OS：从选题、写作、发布到复盘沉淀的一人内容生产系统">
+</p>
 
-> Skill 不是护城河，生产体系才是。
+Jacky Content OS 是一套给内容创作者、个人 IP 和一人公司的本地内容生产系统。它把 Agent Skills、方法论模板和长期工作区连成一条可重复的生产线：不只帮你写一篇稿，而是让每次创作都为下一次积累素材、数据和判断。
 
-Jacky-OPC 是一套面向内容创作者、个人 IP、超级个体和一人公司的 AI 写作生产体系。
+> **一句话理解：** 一个主流程 Skill、四个专项 Skill，加上一套九阶段本地工作区模板。
 
-它不是“万能写稿提示词合集”，而是一套写作工作台：从定位、对标、选题、开头、去 AI 味、发布前检查，到知识库沉淀和数据复盘，形成完整内容生产循环。
+## 60 秒开始
 
-可在 Claude Code、Codex、Cursor、Trae Solo 等支持 skill / system prompt 的 Agent 上按需使用。
-
-> 兼容说明：仓库名和 skill 目录仍保留 `jacky-opc` 等原始名称，避免影响已经安装的用户。
-
-## 付费知识库与答疑群
-
-<a href="https://mp.weixin.qq.com/s/x924y3O9-nWda5OTHArKKg">
-  <img src="assets/creator-ai-course.jpg" alt="创作者 AI 课：用 AI 杠杆、代码杠杆、媒体杠杆，重塑内容创作生产体系" width="720">
-</a>
-
-我的付费知识库与答疑群欢迎加入：
-[https://mp.weixin.qq.com/s/x924y3O9-nWda5OTHArKKg](https://mp.weixin.qq.com/s/x924y3O9-nWda5OTHArKKg)
-
-期待与你的深度链接，一起用AI赋能，创作生财📈
-
-## 最新更新
-
-当前版本：v0.2.0
-
-v0.2.0 重点：
-
-- 收拢写作相关 `jacky-*` 系列 skill。
-- `jacky-opc` 作为写作生产体系主系统。
-- 补充 `opc-system-template/`，让用户能照着搭建自己的内容生产文件夹。
-- 视觉生成类工具已独立维护：[`Jacky-motion`](https://github.com/Jackywxsz/Jacky-motion)、[`Jacky-Illustration`](https://github.com/Jackywxsz/Jacky-Illustration)。
-
-## 如何安装
-
-### 通用安装
-
-如果你的工具支持从 GitHub 安装 skill 仓库：
+### 1. 安装 Skills
 
 ```bash
-npx skills add Jackywxsz/jacky-opc
+npx skills add Jackywxsz/Jacky-Content-OS
 ```
 
-### 手动安装
-
-把需要的 skill 目录复制到你的 skill 目录。
+也可以只复制需要的 Skill：
 
 ```bash
-cp -R skills/jacky-opc ~/.codex/skills/
+cp -R skills/jacky-content ~/.codex/skills/
 cp -R skills/jacky-hook ~/.codex/skills/
 cp -R skills/jacky-wiki ~/.codex/skills/
 cp -R skills/jacky-de-ai ~/.codex/skills/
 cp -R skills/jacky-xhs-check ~/.codex/skills/
 ```
 
-你也可以只复制其中一个 skill。每个 skill 都是独立目录，根级包含 `SKILL.md`。
+### 2. 建立内容工作区
 
-### 环境变量
-
-部分 skill 需要你告诉它本地工作区在哪里。
+复制 [`jacky-content-system-template/`](./jacky-content-system-template/README.md)，改名为自己的 `Jacky Content System`，再配置路径：
 
 ```bash
-export OPC_ROOT="$HOME/Documents/OPC System"
+export JACKY_CONTENT_ROOT="$HOME/Documents/Jacky Content System"
 export WIKI_ROOT="$HOME/Documents/知识库"
 ```
 
-- `OPC_ROOT`：`jacky-opc` 使用，指向你的 OPC System 文件夹。
-- `WIKI_ROOT`：`jacky-wiki` 使用，指向你的知识库。
+### 3. 从一个真实选题开始
 
-## Skills 工具箱
+```text
+使用 $jacky-content，把「为什么用了 AI 反而更忙」发展成一条短视频。
+```
 
-| Skill | 做什么 | 适合什么时候用 |
+主 Skill 会依次读取你的用户画像、对标账号、个人上下文和历史选题，再进入调研、结构、写作、发布与复盘。
+
+## 你会得到什么
+
+| 入口 | 解决的问题 | 最适合的时机 |
 | --- | --- | --- |
-| `jacky-opc` | 一人内容公司全流程系统 | 从选题到发布、复盘、沉淀完整跑一遍 |
-| `jacky-hook` | 短视频 / 图文开头优化 | 开头不吸引人、前 5 秒留不住人 |
-| `jacky-wiki` | 知识库沉淀与检索 | 把对话沉淀到 Obsidian，或只基于知识库回答 |
-| `jacky-de-ai` | 去 AI 味改写 | 文案太像 AI、太书面、太顺滑 |
-| `jacky-xhs-check` | 小红书发布前风险检查 | 发笔记前查敏感词、绝对化表达、引流风险 |
+| [`jacky-content`](./skills/jacky-content/SKILL.md) | 串起完整内容生产流程 | 从选题一路做到发布和复盘 |
+| [`jacky-hook`](./skills/jacky-hook/SKILL.md) | 诊断并重写开头 | 前几秒留不住人、开场太平 |
+| [`jacky-wiki`](./skills/jacky-wiki/SKILL.md) | 检索和沉淀个人知识 | 把对话、素材和经验变成长效资产 |
+| [`jacky-de-ai`](./skills/jacky-de-ai/SKILL.md) | 去掉模板感和机器味 | 初稿太书面、太顺滑、缺少真人判断 |
+| [`jacky-xhs-check`](./skills/jacky-xhs-check/SKILL.md) | 做发布前风险检查 | 小红书文案上线前检查敏感表达 |
 
-## 常见使用路径
-
-### 内容生产主线
+## 从一篇内容变成生产飞轮
 
 ```text
-jacky-opc（选题 / 结构 / 初稿）
-    ↓
-jacky-hook（开头诊断）
-    ↓
-jacky-de-ai（风格打磨）
-    ↓
-jacky-xhs-check（发布前检查）
-    ↓
-jacky-wiki（复盘沉淀）
+定位 → 对标 → 选题 → 结构 → 写作 → 发布 → 数据 → 复盘 → 沉淀
+  ↑                                                       ↓
+  └────────────────── 下一轮读取已有判断与资产 ────────────┘
 ```
 
-### 知识资产路径
+系统的核心不是“多生成几篇稿”，而是让四类资产持续增长：
+
+- **创作上下文**：你的经历、判断、口头表达和受众认知。
+- **选题资产**：谜题、非共识、对标观察和待发布方向。
+- **内容资产**：稿件、发布记录、案例和结构模板。
+- **反馈资产**：数据复盘、失败经验和已经验证的方法。
+
+详细方法见 [`docs/production-flywheel.md`](./docs/production-flywheel.md) 与 [`docs/topic-system.md`](./docs/topic-system.md)。
+
+## 本地工作区长什么样
 
 ```text
-任何一次有价值的对话
-    ↓
-jacky-wiki（写入知识库）
-    ↓
-jacky-opc（下次创作读取上下文）
+Jacky Content System/
+├── 01.用户画像/      # 写给谁
+├── 02.对标账号/      # 向谁学习、避开什么
+├── 03.我的上下文/    # 只有你能提供的经历与判断
+├── 04.选题决策/      # 谜题、非共识与选题池
+├── 05.文案结构/      # 可验证的表达框架
+├── 06.开篇模板/      # 故事、知识、过程与观点开头
+├── 07.发布存档/      # 待发布和已发布内容
+├── 08.数据反馈/      # 单条与月度复盘
+├── 09.经验沉淀/      # 方法论、词典与失败经验
+└── CLAUDE.md         # 人设、受众和写作硬标准
 ```
 
-## OPC System
+模板来自真实工作流的脱敏版本。你可以放在 Obsidian 或普通文件夹中；脚本只通过 `JACKY_CONTENT_ROOT` 定位，不依赖固定的本机路径。
 
-`opc-system-template/` 是 Jacky-OPC 的文件夹体系参考。
+## 项目结构
 
 ```text
-opc-system-template/
-├── 01.用户画像/
-├── 02.对标账号/
-├── 03.我的上下文/
-├── 04.选题决策/
-├── 05.文案结构/
-├── 06.开篇模板/
-├── 07.发布存档/
-├── 08.数据反馈/
-├── 09.经验沉淀/
-└── CLAUDE.md
+Jacky-Content-OS/
+├── skills/                         # 5 个可独立安装的 Agent Skills
+├── jacky-content-system-template/  # 九阶段内容工作区模板
+├── docs/                           # 安装、选题、复盘与生产飞轮说明
+├── tests/                          # 发布契约与脚本安全检查
+├── LICENSE                         # 脚本与代码：MIT
+└── LICENSE-DOCS.md                 # 文档与模板：CC BY 4.0
 ```
 
-使用方式：
+## 边界与隐私
 
-1. 把 `opc-system-template/` 复制到你的 Obsidian 或普通文件夹。
-2. 改名为 `OPC System`。
-3. 先填 `01.用户画像`、`02.对标账号`、`03.我的上下文`。
-4. 再用 `04.选题决策` 的生成模板，逐步建立自己的 100 条谜题和 100 条非共识。
-5. 发布后把数据和经验写回 `08.数据反馈`、`09.经验沉淀`。
+这个仓库提供公开的 Skill、脚本、结构和空白方法论模板，不包含你的真实稿件、账号数据、私有对标、收入信息或本机绝对路径。
 
-## 目录结构
+- 所有个人内容默认留在你自己的工作区。
+- 不需要把 API Key、Token 或账号凭据写入仓库。
+- 写入脚本不会覆盖已有的同名内容文件。
+- 发布前建议阅读 [`SECURITY.md`](./SECURITY.md) 与 [`LICENSE-DOCS.md`](./LICENSE-DOCS.md)。
 
-```text
-jacky-opc/
-├── skills/
-│   ├── jacky-opc/
-│   ├── jacky-hook/
-│   ├── jacky-wiki/
-│   ├── jacky-de-ai/
-│   └── jacky-xhs-check/
-├── opc-system-template/
-├── docs/
-├── LICENSE
-└── README.md
-```
+## 相关项目
 
-## 独立工具仓库
+- [`Jacky-Cockpit`](https://github.com/Jackywxsz/Jacky-Cockpit)：把内容阶段、排期、目标和复盘放进本地可视化驾驶舱。
+- [`Jacky-motion`](https://github.com/Jackywxsz/Jacky-motion)：把中文口播稿转成可录屏的信息动画。
+- [`Jacky-illustration`](https://github.com/Jackywxsz/Jacky-illustration)：为文章、教程和观点生成统一的信息视觉。
 
-视觉和动画工具已经从 Jacky-OPC 拆出，独立维护：
+## 进一步学习
 
-- [`Jacky-motion`](https://github.com/Jackywxsz/Jacky-motion)：中文口播稿转 16:9 信息动画 HTML。
-- [`Jacky-Illustration`](https://github.com/Jackywxsz/Jacky-Illustration)：信息可视化配图、文章配图、IP 型风格生图。
+如果你希望把这套方法扩展成完整的个人内容业务，可以查看我的[创作者 AI 课与答疑群](https://mp.weixin.qq.com/s/x924y3O9-nWda5OTHArKKg)。
 
-## 脱敏边界
-
-这个仓库保留：
-
-- 当前写作相关 `jacky-*` skill 的主体说明、引用文件、模板和必要脚本。
-- Jacky-OPC 的文件夹体系和方法论模板。
-- 可复用的选题、开头、复盘和内容生产结构。
-
-这个仓库不包含：
-
-- 本机绝对路径。
-- 真实 API Key、token、密钥。
-- 输出图片、PDF、`.DS_Store`、生成产物。
-- 未发布私稿、私有对标笔记、真实数据报表。
-
-## 维护计划
-
-- 把 `jacky-opc` 继续做成主入口。
-- 给每个 skill 补齐 README、示例输入和示例输出。
-- 增加 release zip，方便 Trae Solo 等工具导入。
-- 给 `opc-system-template` 增加更完整的空文件夹初始化模板。
-- 建立 changelog，记录每次方法论和 skill 的更新。
+<a href="https://mp.weixin.qq.com/s/x924y3O9-nWda5OTHArKKg">
+  <img src="assets/creator-ai-course.jpg" alt="创作者 AI 课：用 AI、代码和媒体杠杆重塑内容生产体系" width="720">
+</a>
 
 ## 许可证
 
-- 脚本和代码：MIT，见 `LICENSE`
-- 文档、模板、方法论：CC BY 4.0，见 `LICENSE-DOCS.md`
+- 脚本和代码：[MIT](./LICENSE)
+- 文档、模板和方法论：[CC BY 4.0](./LICENSE-DOCS.md)

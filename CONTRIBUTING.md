@@ -1,6 +1,6 @@
 # Contributing
 
-Jacky-OPC welcomes contributions that make the production system easier to use, easier to adapt, and safer to publish.
+Jacky Content welcomes contributions that make the production system easier to use, easier to adapt, and safer to publish.
 
 ## Good Contributions
 
@@ -14,7 +14,7 @@ Jacky-OPC welcomes contributions that make the production system easier to use, 
 
 - Do not submit real API keys, account tokens, analytics exports, customer records, or unpublished private drafts.
 - Use fictional examples when demonstrating workflow.
-- Keep scripts portable. Read `OPC_ROOT` from the environment instead of hard-coding a local path.
+- Keep scripts portable. Read `JACKY_CONTENT_ROOT` from the environment instead of hard-coding a local path.
 - Keep skill instructions specific and executable.
 - Avoid adding dependencies unless they remove real friction.
 
@@ -23,9 +23,8 @@ Jacky-OPC welcomes contributions that make the production system easier to use, 
 Before opening a pull request, run:
 
 ```bash
-bash -n scripts/*.sh
+bash tests/rename-compat.sh
 rg -n "/Users/|API Key|api_key|token|secret|password|AIza" .
 ```
 
 The second command may find documentation examples. Make sure no real credential or personal path is present.
-
