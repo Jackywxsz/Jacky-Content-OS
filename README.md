@@ -4,7 +4,7 @@
 
 Jacky Content OS 是一套给内容创作者、个人 IP 和一人公司的本地内容生产系统。它把 Agent Skills、方法论模板和长期工作区连成一条可重复的生产线：不只帮你写一篇稿，而是让每次创作都为下一次积累素材、数据和判断。
 
-> **一句话理解：** 一个主流程 Skill、四个专项 Skill，加上一套九阶段本地工作区模板。
+> **一句话理解：** 一个主流程 Skill、五个专项 Skill，加上一套九阶段本地工作区模板。
 
 ## 60 秒开始
 
@@ -18,6 +18,7 @@ npx skills add Jackywxsz/Jacky-Content-OS
 
 ```bash
 cp -R skills/jacky-content ~/.codex/skills/
+cp -R skills/jacky-write ~/.codex/skills/
 cp -R skills/jacky-hook ~/.codex/skills/
 cp -R skills/jacky-wiki ~/.codex/skills/
 cp -R skills/jacky-de-ai ~/.codex/skills/
@@ -46,6 +47,7 @@ export WIKI_ROOT="$HOME/Documents/知识库"
 | 入口 | 解决的问题 | 最适合的时机 |
 | --- | --- | --- |
 | [`jacky-content`](./skills/jacky-content/SKILL.md) | 串起完整内容生产流程 | 从选题一路做到发布和复盘 |
+| [`jacky-write`](./skills/jacky-write/SKILL.md) | 把口喷、想法和初稿写成统一作者声音的成稿 | 从真实材料直接写到可发布版本 |
 | [`jacky-hook`](./skills/jacky-hook/SKILL.md) | 诊断并重写开头 | 前几秒留不住人、开场太平 |
 | [`jacky-wiki`](./skills/jacky-wiki/SKILL.md) | 检索和沉淀个人知识 | 把对话、素材和经验变成长效资产 |
 | [`jacky-de-ai`](./skills/jacky-de-ai/SKILL.md) | 去掉模板感和机器味 | 初稿太书面、太顺滑、缺少真人判断 |
@@ -90,7 +92,7 @@ Jacky Content System/
 
 ```text
 Jacky-Content-OS/
-├── skills/                         # 5 个可独立安装的 Agent Skills
+├── skills/                         # 6 个可独立安装的 Agent Skills
 ├── jacky-content-system-template/  # 九阶段内容工作区模板
 ├── docs/                           # 安装、选题、复盘与生产飞轮说明
 ├── tests/                          # 发布契约与脚本安全检查

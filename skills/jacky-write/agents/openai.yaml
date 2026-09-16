@@ -1,0 +1,4 @@
+interface:
+  display_name: "Jacky Write"
+  short_description: "把口喷、零散想法和初稿写成有张力、有获得感且不失真的中文成稿"
+  default_prompt: "Use $jacky-write to turn this rough idea or voice dump into a publish-ready Chinese draft."
